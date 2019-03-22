@@ -1,0 +1,29 @@
+Source: golang-jsouthworth-immutable
+Section: devel
+Priority: extra
+Maintainer: John Southworth <jx756k@att.com>
+Build-Depends:
+ debhelper (>= 9),
+ dh-golang,
+ golang-go,
+ golang-jsouthworth-dyn-dev,
+ golang-jsouthworth-hash-dev,
+ golang-jsouthworth-seq-dev,
+ golang-jsouthworth-transduce-dev
+Standards-Version: 3.9.8
+Homepage: https://jsouthworth.net/go/immutable
+
+Package: golang-jsouthworth-immutable-dev
+Architecture: all
+Depends:
+ golang-jsouthworth-dyn-dev,
+ golang-jsouthworth-hash-dev,
+ golang-jsouthworth-seq-dev,
+ golang-jsouthworth-transduce-dev,
+ ${misc:Depends},
+ ${shlibs:Depends}
+Built-Using: ${misc:Built-Using}
+Description: Immutable data structures for the go programming language
+ A set of immutable persistent data structure implementations.
+ .
+ This package contains the source.

@@ -1,0 +1,81 @@
+golang-jsouthworth-immutable (1.0-1) unstable; urgency=medium
+
+  * Initial commit
+  * vector: initial implementation
+  * queue: initial implementation
+  * hashmap: initial implementation
+  * treemap: initial implementation
+  * list: initial implementation
+  * hashset: initial implementation
+  * treeset: initial implementation
+  * stack: initial implementation
+  * Add Travis CI and Coveralls integration
+  * Add vanity import path for Travis CI
+  * Rework cover profile generation for Coveralls integration
+  * all: add Find methods
+  * queue: Rework implementation
+  * stack: implement sequence String serialization
+  * vector: implement sequence String serialization
+  * hashmap: implement sequence String serialization
+  * treemap: implement sequence String serialization
+  * list: implement sequence String serialization
+  * queue: add package docuementation
+  * vector: use dyn.Apply for Range function
+  * hashmap: use dyn.Apply for Range function
+  * hashset: use dyn.Apply for Range function
+  * list: use dyn.Apply for Range function
+  * queue: use dyn.Apply for Range function
+  * stack: use dyn.Apply for Range function
+  * treemap: use dyn.Apply for Range function
+  * treeset: use dyn.Apply for Range function
+  * stack: use dyn.Apply for Range function in transient stack
+  * vector: Add equal for slices
+  * hashmap: don't do type assertions on nil
+  * vector: fix test case to account for an empty vector
+  * hashmap: implement dyn's applier interface, maps can now be
+	called by dyn.Apply
+  * hashset: implement dyn's applier interface, sets can now be
+	called by dyn.Apply
+  * hashmap: Fix length test to account for existing k,v pairs
+  * vector: implement dyn's applier interface, sets can now be
+	called by dyn.Apply
+  * treemap: implement dyn's applier interface, sets can now be
+	called by dyn.Apply
+  * treeset: implement dyn's applier interface, sets can now be
+	called by dyn.Apply
+  * hashmap: use dyn.Equal instead of internal implementation
+  * treemap: use dyn.Equal and dyn.Compare instead of internal implementations
+  * treemap: expose Option type to allow plumbing it through from treeset
+  * treeset: Allow passing treemap options
+  * hashmap: speed up range by determining the function to call before the loop
+  * treemap: speed up range by determining the function to call before the loop
+  * vector: speed up range by determining the function to call before the loop
+  * vector: use dyn.Equal and dyn.Compare instead of internal implementations
+  * list: speed up range by determining the function to call before the loop
+  * queue: speed up range by determining the function to call before the loop
+  * stack: speed up range by determining the function to call before the loop
+  * hashmap: rename Mutate to Transform for clarity
+  * hashmap: speedup range and range for transient
+  * hashmap: add String to transient
+  * hashmap: add Equal to transient
+  * vector: Add Transform, Delete, and Insert functions
+  * hashset: implement Equal, Transform, and Seq
+  * treeset: implement Seq
+  * treeset: implement Equal
+  * stack: add Transform method
+  * stack: add Equal method
+  * list: add Length and Equal methods
+  * queue: add Equal method
+  * list: add From constructor
+  * hashmap: document equality requirements
+  * hashset: document equality requirements
+  * treemap: document equality requirements
+  * treeset: document equality requirements
+  * vector: add examples
+  * hashmap: add examples
+  * hashmap: add tests for hash collision nodes
+  * queue: add examples
+  * queue: behave like other data structures when creating from non
+	compatible data
+
+ -- John Southworth <jx756k@att.com>  Fri, 22 Mar 2019 14:55:49 -0700
