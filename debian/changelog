@@ -1,3 +1,20 @@
+golang-jsouthworth-immutable (1.0-2) unstable; urgency=medium
+
+  * hashmap: don't force comparable values
+  * hashmap: make sure nil values are comparable
+  * hashmap: switch to dyn's EqualNonComparable
+  * hashmap: add generic conjoin operation
+  * hashset: add generic conjoin operation
+  * list: add generic conjoin operation
+  * queue: add generic conjoin operation
+  * stack: add generic conjoin operation
+  * treemap: add generic conjoin operation
+  * treeset: add generic conjoin operation
+  * vector: add generic conjoin operation
+  * hashmap: allow incomparable keys
+
+ -- John Southworth <jx756k@att.com>  Wed, 10 Apr 2019 11:20:29 -0700
+
 golang-jsouthworth-immutable (1.0-1) unstable; urgency=medium
 
   * Initial commit
@@ -33,16 +50,16 @@ golang-jsouthworth-immutable (1.0-1) unstable; urgency=medium
   * hashmap: don't do type assertions on nil
   * vector: fix test case to account for an empty vector
   * hashmap: implement dyn's applier interface, maps can now be
-	called by dyn.Apply
+    called by dyn.Apply
   * hashset: implement dyn's applier interface, sets can now be
-	called by dyn.Apply
+    called by dyn.Apply
   * hashmap: Fix length test to account for existing k,v pairs
   * vector: implement dyn's applier interface, sets can now be
-	called by dyn.Apply
+    called by dyn.Apply
   * treemap: implement dyn's applier interface, sets can now be
-	called by dyn.Apply
+    called by dyn.Apply
   * treeset: implement dyn's applier interface, sets can now be
-	called by dyn.Apply
+    called by dyn.Apply
   * hashmap: use dyn.Equal instead of internal implementation
   * treemap: use dyn.Equal and dyn.Compare instead of internal implementations
   * treemap: expose Option type to allow plumbing it through from treeset
@@ -76,6 +93,6 @@ golang-jsouthworth-immutable (1.0-1) unstable; urgency=medium
   * hashmap: add tests for hash collision nodes
   * queue: add examples
   * queue: behave like other data structures when creating from non
-	compatible data
+    compatible data
 
  -- John Southworth <jx756k@att.com>  Fri, 22 Mar 2019 14:55:49 -0700
