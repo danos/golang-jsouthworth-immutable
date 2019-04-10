@@ -31,6 +31,11 @@ type Entry interface {
 	Value() interface{}
 }
 
+// EntryNew constructs a map entry that may be used with Conj.
+func EntryNew(key, value interface{}) Entry {
+	return entry{key, value}
+}
+
 // Map is a persistent immutable map. Operations on
 // map returns a new map that shares much of the
 // structure with the original map.
@@ -173,6 +178,13 @@ func (m *Map) Assoc(key, value interface{}) *Map {
 	}
 }
 
+// Conj takes a value that must be an Entry. Conj implements
+// a generic mechanism for building collections.
+func (m *Map) Conj(value interface{}) interface{} {
+	entry := value.(Entry)
+	return m.Assoc(entry.Key(), entry.Value())
+}
+
 // AsNative returns the map converted to a go native map type.
 func (m *Map) AsNative() map[interface{}]interface{} {
 	out := make(map[interface{}]interface{})
@@ -241,7 +253,7 @@ func (m *Map) Equal(o interface{}) bool {
 	}
 	foundAll := true
 	m.Range(func(key, value interface{}) bool {
-		if !dyn.Equal(other.At(key), value) {
+		if !equalValues(other.At(key), value) {
 			foundAll = false
 			return false
 		}
@@ -409,6 +421,13 @@ func (m *TMap) Assoc(key, value interface{}) *TMap {
 	return m
 }
 
+// Conj takes a value that must be an Entry. Conj implements
+// a generic mechanism for building collections.
+func (m *TMap) Conj(value interface{}) interface{} {
+	entry := value.(Entry)
+	return m.Assoc(entry.Key(), entry.Value())
+}
+
 // AsPersistent will transform this transient map into a persistent map.
 // Once this occurs any additional actions on the transient map will fail.
 func (m *TMap) AsPersistent() *Map {
@@ -463,7 +482,7 @@ func (m *TMap) Equal(o interface{}) bool {
 	}
 	foundAll := true
 	m.Range(func(key, value interface{}) bool {
-		if !dyn.Equal(other.At(key), value) {
+		if !equalValues(other.At(key), value) {
 			foundAll = false
 			return false
 		}
@@ -713,4 +732,8 @@ func atomicZero() *uint32 {
 
 func atomicOne() *uint32 {
 	return atomicUint(1)
+}
+
+func equalValues(one, two interface{}) bool {
+	return dyn.EqualNonComparable(one, two)
 }
