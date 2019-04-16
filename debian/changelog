@@ -1,3 +1,9 @@
+golang-jsouthworth-immutable (1.0-3) unstable; urgency=medium
+
+  * hashset: Add Conj to transietn set
+
+ -- John Southworth <jx756k@att.com>  Tue, 16 Apr 2019 13:34:06 -0700
+
 golang-jsouthworth-immutable (1.0-2) unstable; urgency=medium
 
   * hashmap: don't force comparable values
