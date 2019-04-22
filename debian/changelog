@@ -1,3 +1,14 @@
+golang-jsouthworth-immutable (1.0-4) unstable; urgency=medium
+
+  * hashmap: add fast Reduce method
+  * hashset: add fast Reduce method
+  * vector: add fast Reduce method
+  * queue: add fast Reduce method
+  * stack: add Length and Reverse functions
+  * stack: add fast Reduce method
+
+ -- John Southworth <jx756k@att.com>  Mon, 22 Apr 2019 08:27:49 -0700
+
 golang-jsouthworth-immutable (1.0-3) unstable; urgency=medium
 
   * hashset: Add Conj to transietn set
